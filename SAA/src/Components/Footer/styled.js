@@ -2,14 +2,15 @@ import styled from 'styled-components';
 
 
 export const AreaFooter = styled.div`
-    height: 60px;
-    background-color:#000000;
-    color:#fff;
+    background-color:#ccc;
+    text-align: center;
+    padding:20px;
+    font-size: 14px;
 
-    .container{
-        padding: 5px 20px;
-        display: flex;
-        align-itens: center;
 
-    }
+    bottom:0;
+    position:fixed;
+    width:100%:
+
+
 `;
