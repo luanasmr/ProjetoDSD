@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 export const AreaHeader = styled.div`
     height: 60px;
-    background-color:#000000;
+    background-image:linear-gradient(to right, #000000, #008000);
     color:#fff;
 
     .container{
@@ -35,6 +35,15 @@ export const AreaHeader = styled.div`
         li{
             list-style: none;
             margin-left: 20px;
+
+            a{
+                text-decoration:none;
+                color: #fff;
+
+                &:hover{
+                    color: #F5BB00;
+                }
+            }
         }
 
     }
