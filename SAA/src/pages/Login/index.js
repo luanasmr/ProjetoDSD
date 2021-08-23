@@ -12,7 +12,7 @@ export default () => {
                 <BtnDefaultIcons>
                     <GTranslateIcon></GTranslateIcon>
 
-                    <div class="center">Fazer login com o Google</div>
+                    <div class="center">Fazer login com o Google :</div>
 
                 </BtnDefaultIcons>
         </AreaLogin>
