@@ -1,5 +1,5 @@
-import React from "react";
-import { geolocated, geoPropTypes } from "../src/maps";
+import React from 'react';
+import { geolocated, geoPropTypes } from '../../maps';
 
 const getDirection = (degrees, isLongitude) =>
     degrees > 0 ? (isLongitude ? "E" : "N") : isLongitude ? "W" : "S";
