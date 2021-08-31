@@ -34,7 +34,7 @@ const Map = () => {
                 onClick={getLocation}
                 type="button"
             >
-                Get location
+                Consultar aglomeração
             </button>
         </article>
     );

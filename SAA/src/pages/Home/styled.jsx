@@ -27,11 +27,13 @@ const teste = (props) => (
             <div>Geolocation is not enabled.</div>
         ) : props.coords ? (
             <div>
-                You are at{" "}
+                Você está em:<br></br>
+                {"Latituide : "}
                 <span className="coordinate">
                     {formatDegrees(props.coords.latitude, false)}
                 </span>
-                ,{" "}
+                <br></br>
+                {"Longitude: "}
                 <span className="coordinate">
                     {formatDegrees(props.coords.longitude, true)}
                 </span>
