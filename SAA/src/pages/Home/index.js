@@ -35,7 +35,7 @@ const MapView = (props) => {
         currentLocation,
       });
       history.replace({
-        pathname: "/styled",
+        pathname: "/map",
         state: {},
       });
     }
