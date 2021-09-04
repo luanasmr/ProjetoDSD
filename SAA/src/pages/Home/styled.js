@@ -33,7 +33,7 @@ const Mapa = () => {
 
       <Link
         to={{
-          pathname: "/index",
+          pathname: "/map",
           // state: {
           //   hello: 'world'
           // }
