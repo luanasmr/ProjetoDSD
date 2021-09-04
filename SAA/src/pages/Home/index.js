@@ -1,43 +1,12 @@
-/*import React from 'react';
-import PeopleAltOutlinedIcon from '@material-ui/icons/PeopleAltOutlined';
-
-import { ContainerPage, TitlePage} from '../../Components/Main';
-
-const Page = () => {
-    return(
-        <ContainerPage>
-            <TitlePage>
-                <PeopleAltOutlinedIcon></PeopleAltOutlinedIcon>
-                Seja Bem vindo!
-            </TitlePage>
-        </ContainerPage>
-    );
-}
-
-export default Page;*/
-import React, { useRef } from "react";
-import Demo from "./styled.jsx";
-
-const Map = () => {
-    const innerRef = useRef();
-
-    const getLocation = () => {
-        innerRef.current && innerRef.current.getLocation();
-    };
-
-    return (
-        <article style={{ textAlign: "center" }}>
-            {/* eslint-disable-next-line no-console*/}
-            <Demo onError={(error) => console.log(error)} ref={innerRef} />
-            <button
-                className="pure-button pure-button-primary"
-                onClick={getLocation}
-                type="button"
-            >
-                Consultar aglomeração
-            </button>
-        </article>
-    );
-};
-
-export default Map;
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+<MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+  <TileLayer
+    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+  />
+  <Marker position={[51.505, -0.09]}>
+    <Popup>
+      A pretty CSS3 popup. <br /> Easily customizable.
+    </Popup>
+  </Marker>
+</MapContainer>

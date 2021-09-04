@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+/*import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 const getDisplayName = (WrappedComponent) =>
@@ -137,4 +137,4 @@ export const geoPropTypes = {
         message: PropTypes.string,
     }),
     watchPosition: PropTypes.bool,
-};
+};*/
