@@ -1,5 +1,5 @@
 import React from "react";
-import mapa from 'components/pages/Home/styled.js';
+import mapa from './Components/pages/Home/styled.js';
 const Map = () => {
  
 
