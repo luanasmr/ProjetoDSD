@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const Mapa = () => {
+const Map= () => {
   const [state, setState] = useState({
     longitude: 0,
     latitude: 0,
@@ -45,4 +45,4 @@ const Mapa = () => {
     </div>
   );
 };
-export default Mapa;
+export default Map;
