@@ -45,3 +45,4 @@ const Mapa = () => {
     </div>
   );
 };
+export default Mapa;
