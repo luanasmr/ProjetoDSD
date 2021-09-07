@@ -1,29 +1,9 @@
-import React, { Component, useRef } from 'react';
-import { Map,  Marker } from 'google-maps-react';
-import Demo from './Home/styled';
+import React, { Component } from 'react';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+//import {getLocation} from './geolocation.js';
 
-const PegarLocalizacao = () => {
-    const innerRef = useRef();
 
-    const getLocation = () => {
-        innerRef.current && innerRef.current.getLocation();
-    };
 
-    return (
-        <article style={{ textAlign: "center" }}>
-            {/* eslint-disable-next-line no-console*/}
-            <Demo  onError={(error) => console.log(error)} ref={innerRef} />
-            <button
-                className="pure-button pure-button-primary"
-                onClick={getLocation}
-                type="button"
-            >
-                Get location
-            </button>
-        </article>
-    );
-}
-export default PegarLocalizacao;
 
 
 export class MapContainer extends Component {
@@ -33,8 +13,8 @@ export class MapContainer extends Component {
 
     this.state = {
       stores: [
-        { longitude: getLocation.longitude.local },
-        { latitude:getLocation.latitude.local },]
+        { latitude:  -6.47511, longitude:  -35.4286},
+        { latitude: -26.9605363, longitude: -52.5335505, local: "Xaxim" },]
     }
   }
 
@@ -53,7 +33,7 @@ export class MapContainer extends Component {
 
       <Map
         google={this.props.google}
-        zoom={7}
+        zoom={13}
         initialCenter={{ lat: -27.0922364, lng: -52.6166878 }}
       >
 
@@ -64,9 +44,9 @@ export class MapContainer extends Component {
   }
 }
 
-
-/*export default GoogleApiWrapper(
+export default GoogleApiWrapper(
   (props) => ({
-    apiKey: 'AQUI VAI A SUA KEY',
+    apiKey: 'AIzaSyDT-VIUQmnhKmkLF2ylVGfJlw9Sa9xoN64',
   }
-  ))(MapContainer)*/
+  ))(MapContainer)
+
