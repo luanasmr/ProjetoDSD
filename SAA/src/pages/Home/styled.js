@@ -1,49 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Map, TileLayer, Marker, Poup } from 'react-leaflet';
+const LeafletMap = (props : any): any=>{
+const  mapPositions = [11.1271, 78.6569];
 
-const Mapa= () => {
-  const [state, setState] = useState({
-    longitude: 0,
-    latitude: 0,
-  });
+return(
 
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-      function (position) {
-        // console.log(position);
-        setState({
-          longitude: position.coords.longitude,
-          latitude: position.coords.latitude,
-        });
-      },
-      function (error) {
-        console.error("Error Code = " + error.code + " - " + error.message);
-      },
-      {
-        enableHighAccuracy: true,
-      }
-    );
-  }, []);
+  <Map
+  class name = "mapa"
+   center ={[mapPositions[0], mapPositions=[1]]} zoo={5}>
+     <TileLayer
+     attribution = '&amp; copy<a href="http://osm.org/copyrigth"OpenStreetMap</a>contributrs'
+     url="https:\\{s}.title.openstreetmap.org/{z}/{x}/{y}.png"
+     
+     />
+   </Map>
 
-  return (
-    <div>
-      <h1>Geolocation</h1>
-      <p>Latitude: {state.latitude}</p>
-      <p>longitude: {state.longitude}</p>
+);
 
-      <Link
-        to={{
-          pathname: "/map",
-          // state: {
-          //   hello: 'world'
-          // }
-          state,
-        }}
-      >
-        See marker
-      </Link>
-    </div>
-  );
+
+
+
+
 };
+export default LeafletMap;
 
-export default Mapa;
+
