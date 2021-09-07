@@ -1,6 +1,6 @@
 import React, { Component, useRef } from 'react';
 import { Map,  Marker } from 'google-maps-react';
-import Demo from './styled.jsx';
+import Demo from './Home/styled';
 
 const PegarLocalizacao = () => {
     const innerRef = useRef();
