@@ -1,5 +1,5 @@
-import React from 'react';
-import { geolocated, geoPropTypes } from '../../maps';
+import React from "react";
+import { geolocated, geoPropTypes } from "./Home/geolocation.jsx";
 
 const getDirection = (degrees, isLongitude) =>
     degrees > 0 ? (isLongitude ? "E" : "N") : isLongitude ? "W" : "S";
@@ -27,13 +27,11 @@ const teste = (props) => (
             <div>Geolocation is not enabled.</div>
         ) : props.coords ? (
             <div>
-                Você está em:<br></br>
-                {"Latituide : "}
+                You are at{" "}
                 <span className="coordinate">
                     {formatDegrees(props.coords.latitude, false)}
                 </span>
-                <br></br>
-                {"Longitude: "}
+                ,{" "}
                 <span className="coordinate">
                     {formatDegrees(props.coords.longitude, true)}
                 </span>
