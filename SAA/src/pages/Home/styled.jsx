@@ -19,10 +19,11 @@ const teste = (props) => (
             fontSize: "large",
             fontWeight: "bold",
             margin: "2rem",
+            
         }}
     >
         {!props.isGeolocationAvailable ? (
-            <div>Your browser does not support Geolocation.</div>
+            <div>Seu navegador não suporta Geolocation.</div>
         ) : !props.isGeolocationEnabled ? (
             <div>Geolocation is not enabled.</div>
         ) : props.coords ? (

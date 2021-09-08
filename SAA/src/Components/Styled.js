@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const BtnDefaultIcons = styled.button`
+
     display: flex;
     align-items: center;
     padding: 10px;
@@ -12,6 +13,7 @@ export const BtnDefaultIcons = styled.button`
     font=weight: bold;
     margin-bottom: 15px;
     transition: 0.4s;
+    box-shadow: 0px 0px 1px #008000;
 
     &:hover{
         background-color:#ccc;

@@ -3,6 +3,9 @@ import React from 'react';
 import Api from '../../Api';
 
 import { AreaLogin } from './styled';
+import { AreaMeio } from './styled';
+
+
 
 import { BtnDefaultIcons } from '../../Components/Styled';
 import GTranslateIcon from '@material-ui/icons/GTranslate';
@@ -18,14 +21,25 @@ export default ({onReceiveGoogle}) => {
        }
     }
     return(
-        <AreaLogin>
-            <h1> Faça login em sua conta</h1>
-                <BtnDefaultIcons onClick={actionLoginGoogle}>
-                    <GTranslateIcon></GTranslateIcon>
+      <>
+       <AreaMeio> 
+       <div className="logo">
+                <img src="../../../logo.png"></img>
+        </div>
+       </AreaMeio>
+            <AreaLogin>
+           
+                <h1> Faça seu Login</h1>
+                    <BtnDefaultIcons onClick={actionLoginGoogle}>
+                        <GTranslateIcon></GTranslateIcon>
 
-                    <div class="center">Fazer login com o Google </div>
+                        <div class="center">Fazer login com o Google </div>
 
-                </BtnDefaultIcons>
-        </AreaLogin>
+                    </BtnDefaultIcons>
+            </AreaLogin>
+            
+        </>
     );
+   
+
 }
