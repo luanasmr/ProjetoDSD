@@ -5,7 +5,7 @@ import { ContainerPage, TitlePage} from '../../Components/Main';
 const Page = () => {
     return(
         <ContainerPage>
-            <TitlePage>Configurações</TitlePage>
+            <TitlePage>Histórico</TitlePage>
         </ContainerPage>
     );
 }
