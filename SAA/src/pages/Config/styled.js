@@ -1,10 +1,8 @@
 
 import styled from 'styled-components';
 
-export const ContainerPage = styled.div`
+export const cor= styled.div`
     padding: 5px 20px;
+    color: white;
 `;
 
-export const TitlePage = styled.h1`
-    font size:20px;
-`;
