@@ -1,36 +1,28 @@
 import React, { Component } from 'react';
 import api from './api';
 
+
 class Historico extends Component {
     state = {
         localizacao: [],
-
-
     }
-// método para carregar os livros
-
-
 
    componentDidMount() {
     this.loadHist();
    }
 
    loadHist = async () => {
-    // passando a página por parâmetro
-    const response = await api.get(`/users`);
+        // passando a página por parâmetro
+        const response = await api.get(`/historico`);
 
-    //console.log(this.props);
-    console.log(response);
+        //console.log(this.props);
+        console.log(response);
 
-    const {docs, ...bookInfo} = response.data;
-    console.log(bookInfo);
-
-    this.setState({ localizacao: docs });
+        this.setState({ localizacao: response.data });
     }
 
     render() {
-        this.loadHist();
-       
+      
         const { localizacao } = this.state;
         console.log(localizacao);
         return (
@@ -39,14 +31,16 @@ class Historico extends Component {
              
                     <h1>Listar</h1>
 
-                    <ul style={{ listStyleType: "none", color: "white" }}>
+                    <ul style={{ listStyleType: "none", color: "white" , backgroundcolor: "green"}}
+                    >
                         {localizacao.map(local => (
 
-                            <li key={local.id}>
+                            <li key={local.idhist}>
 
-                                <p>usuario:   {local.id} </p>
+                                <p>usuario:   {local.idhist} </p>
                                 <p>latitude:  {local.latitude} </p>
                                 <p>longitude: {local.longitude} </p>
+                                <p>data: {local.data_hora}</p>
                             </li>
 
 
