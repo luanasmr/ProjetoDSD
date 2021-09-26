@@ -7,11 +7,11 @@ class Historico extends Component {
         localizacao: [],
     }
 
-   componentDidMount() {
-    this.loadHist();
-   }
+    componentDidMount() {
+        this.loadHist();
+    }
 
-   loadHist = async () => {
+    loadHist = async () => {
         // passando a página por parâmetro
         const response = await api.get(`/historico`);
 
@@ -22,39 +22,42 @@ class Historico extends Component {
     }
 
     render() {
-      
+
         const { localizacao } = this.state;
         console.log(localizacao);
         return (
 
             <div>
-             
+                <center>
                     <h1>Histórico</h1>
 
-                    <table style={{ whidth: "100%",  border: "1px solid  white", color: "white" }}
+                    <table style={{ whidth: "100%", border: "1px solid  white", color: "white" }}
                     >
-                         <tr >
-                             <th><center>ID</center></th>
-                             <th><center>Latitude</center></th>
-                             <th><center>Longitude</center></th>
-                            </tr>
-                       
+                        <tr >
+
+                            <th>ID</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+
+                        </tr>
+
                         {localizacao.map(local => (
 
 
                             <tr key={local.idhist}>
-                              
-                                <td>{ local.idhist } </td>
-                                <td>{ local.latitude } </td>
-                                <td>{ local.longitude } </td>
-                                <td>{ local.data_hora }</td>
+
+                                <td>{local.idhist} </td>
+                                <td>{local.latitude} </td>
+                                <td>{local.longitude} </td>
+                                <td>{local.data_hora}</td>
+
                             </tr>
 
 
 
                         ))}</table>
-            
 
+                </center>
             </div>
 
 
