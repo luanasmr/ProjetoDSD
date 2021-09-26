@@ -29,23 +29,30 @@ class Historico extends Component {
 
             <div>
              
-                    <h1>Listar</h1>
+                    <h1>Histórico</h1>
 
-                    <ul style={{ listStyleType: "none", color: "white" , backgroundcolor: "green"}}
+                    <table style={{ whidth: "100%",  border: "1px solid  white", color: "white" }}
                     >
+                         <tr >
+                             <th><center>ID</center></th>
+                             <th><center>Latitude</center></th>
+                             <th><center>Longitude</center></th>
+                            </tr>
+                       
                         {localizacao.map(local => (
 
-                            <li key={local.idhist}>
 
-                                <p>usuario:   {local.idhist} </p>
-                                <p>latitude:  {local.latitude} </p>
-                                <p>longitude: {local.longitude} </p>
-                                <p>data: {local.data_hora}</p>
-                            </li>
+                            <tr key={local.idhist}>
+                              
+                                <td>{ local.idhist } </td>
+                                <td>{ local.latitude } </td>
+                                <td>{ local.longitude } </td>
+                                <td>{ local.data_hora }</td>
+                            </tr>
 
 
 
-                        ))}</ul>
+                        ))}</table>
             
 
             </div>
