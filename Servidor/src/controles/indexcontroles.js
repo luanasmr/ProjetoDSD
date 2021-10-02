@@ -3,8 +3,8 @@ const { Pool} = require('pg');
 const pool = new Pool ({
     user: 'postgres',
     host: 'localhost',
-    password: '',
-    database: 'SAAA',
+    password: '12345',
+    database: 'SAA',
     port: '5432'
 })
 
@@ -65,13 +65,13 @@ const getHistById = async (req, res) => {
 
 
 const createHist = async (req, res) => {
-    const { idhist, idusu, longitude, latitude } = req.body;
+    const {  idusu, longitude, latitude } = req.body;
     // a data e hora a própria função nativa do banco now() já pega
-    const resposta = await pool.query('INSERT INTO historico (idhist, idusu, data_hora,longitude, latitude) VALUES ($1, $2, now(), $3, $4)', [idhist, idusu, latitude, longitude]);
+    const resposta = await pool.query('INSERT INTO historico ( idusu, data_hora,longitude, latitude) VALUES ($1,  now(), $2, $3)', [ idusu, longitude, latitude]);
     res.json({
         message: 'Histórico adicionado com sucesso!',
         body: {
-            historico: {idhist, idusu, longitude, latitude}
+            historico: { idusu, longitude, latitude}
         }
     })
 };
