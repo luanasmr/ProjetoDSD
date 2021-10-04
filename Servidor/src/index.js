@@ -19,7 +19,7 @@ app.use((req, res, next)=>{
 app.use(require('./routes/index'));
 
 
-app.listen(4000);
-console.log('Servidor na porta:', 4000);
+app.listen(5000);
+console.log('Servidor na porta:', 5000);
 
 

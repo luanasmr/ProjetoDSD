@@ -57,6 +57,13 @@ const getHist = async (req, res) => {
     res.status(200).json(resposta.rows);
 };
 
+
+const getAglo = async (req, res) => {
+    const idhist = parseInt(req.params.idhist);
+    const resposta = await pool.query('SELECT longitude FROM historico ');
+    res.status(200).json(resposta.rows);
+};
+
 const getHistById = async (req, res) => {
     const idhist = parseInt(req.params.idhist);
     const resposta = await pool.query('SELECT * FROM historico WHERE idhist = $1', [idhist]);
@@ -71,7 +78,7 @@ const createHist = async (req, res) => {
     res.json({
         message: 'Histórico adicionado com sucesso!',
         body: {
-            historico: { idusu, longitude, latitude}
+            historico: {  idusu, longitude, latitude}
         }
     })
 };
@@ -105,6 +112,7 @@ module.exports = {
     createUser,
     updateUser,
     deleteUser,
+    getAglo,
     getHist,
     getHistById,
     createHist,

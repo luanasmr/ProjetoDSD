@@ -4,6 +4,9 @@ import Api from '../../Api';
 
 import { AreaLogin } from './styled';
 import { AreaMeio } from './styled';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'reactstrap';
+
 
 
 
@@ -11,6 +14,7 @@ import { BtnDefaultIcons } from '../../Components/Styled';
 import GTranslateIcon from '@material-ui/icons/GTranslate';
 
 export default ({onReceiveGoogle}) => {
+
     const actionLoginGoogle = async () =>{
        let result = await Api.googlelogar();
 
@@ -30,11 +34,12 @@ export default ({onReceiveGoogle}) => {
             <AreaLogin>
            
                 <h1> Faça seu Login</h1>
+                
                     <BtnDefaultIcons onClick={actionLoginGoogle}>
+                       <div >
                         <GTranslateIcon></GTranslateIcon>
-
-                        <div class="center">Fazer login com o Google </div>
-
+                        <Button color="#fff" class="center">Fazer login com o Google</Button>
+                        </div>
                     </BtnDefaultIcons>
             </AreaLogin>
             
