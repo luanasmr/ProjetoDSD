@@ -1,13 +1,19 @@
 const { Pool} = require('pg');
+require('dotenv/config');
 
-const pool = new Pool ({
-    user: 'postgres',
-    host: 'localhost',
-    password: '12345',
-    database: 'SAA',
-    port: '5432'
-})
+// const pool = new Pool ({
+//     user: 'zbiizuoloohcpu',
+//     host: 'ec2-52-7-228-45.compute-1.amazonaws.com',
+//     password: 'a0935d2e815c4f8290db477456fae16872dc2d76d55207263e90fd675459cb30',
+//     database: 'dee2mgph5raj8r',
+//     port: '5432'
+// })
 
+const pool = new Pool({
+    connectionString:process.env.DATABASE_URL,
+    ssl:{rejectUnauthorized:false}
+ 
+});
 
 const getUsers = async (req, res) => {
     const resposta = await pool.query('SELECT * FROM usuario ORDER BY idusu ASC');
@@ -74,7 +80,7 @@ const getHistById = async (req, res) => {
 const createHist = async (req, res) => {
     const {  idusu, longitude, latitude } = req.body;
     // a data e hora a própria função nativa do banco now() já pega
-    const resposta = await pool.query('INSERT INTO historico ( idusu, data_hora,longitude, latitude) VALUES ($1,  now(), $2, $3)', [ idusu, longitude, latitude]);
+    const resposta = await pool.query('INSERT INTO historico ( idusu, data_hora,latitude, longitude) VALUES ($1,  now(), $2, $3)', [ idusu,latitude, longitude]);
     res.json({
         message: 'Histórico adicionado com sucesso!',
         body: {
