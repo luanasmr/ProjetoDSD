@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react';  
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 //import { AddAlarmSharp } from '@material-ui/icons';
 //import {getLocation} from './geolocation.js';
 import Axios from 'axios';
 import api from '../Config/api';
-
+ 
 
 
 
