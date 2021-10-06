@@ -26,8 +26,6 @@ export class MapContainer extends Component {
     // passando a página por parâmetro
     const response = await api.get(`/historico`);
 
-    //console.log(this.props);
-    console.log(response);
 
     this.setState({ localizacao: response.data });
   }
@@ -40,12 +38,11 @@ export class MapContainer extends Component {
       navigator.geolocation.getCurrentPosition( (pos) => { //postagem ao servidor
         this.currentLatitude = pos.coords.latitude;
         this.currentLongitude = pos.coords.longitude;
-        console.log(pos);
         const headers = {
           'Content-Type': 'application/json',
         }
 
-        Axios.post('http://localhost:4000/historico',{ // fazer get pegar posi bd.
+        Axios.post('https://saa-back-end-p.herokuapp.com/historico',{ // fazer get pegar posi bd.
            // id aleatório de sessão ( da pessoa logada) 
           longitude:pos.coords.longitude,
           latitude:pos.coords.latitude
@@ -60,29 +57,13 @@ export class MapContainer extends Component {
   }
 
   displayMarkers = () => {
-    // var arr = [ // sai arr vira axios do array do servd.
-    //   {"lat":-6.4779144, "lng":-35.4370787},
-    //   {"lat":-6.4787770052454885, "lng":-35.43456610606472},
-    // ]
-
+    
     var resp = [
 
     ]
 
-    // for (var i = 0; i < arr.length; i++){
-    //   resp.push(<Marker key={i} id={i} name={'Teste'} title={`Marcador ${i+1}`}  position={{
-    //     lat:  arr[i]["lat"],
-    //     lng: arr[i]["lng"]
-    //   }}
-    //   >
-    //   </Marker>)
-
-    // }
 
     const { localizacao } = this.state;
-
-    console.log("TESTANDO");
-    console.log(localizacao);
     for (var i = 0; i < localizacao.length; i++){
       resp.push(<Marker key={i} id={i} name={'Teste'} title={`Marcador ${i+1}`}  position={{
         lat:  localizacao[i].latitude,
@@ -95,28 +76,11 @@ export class MapContainer extends Component {
 
 
     return resp;
-    //   return [<Marker key={1} id={1} position={{
-    //     lat: this.currentLatitude,
-    //     lng: this.currentLongitude
-    //   }}
-    //   ></Marker>,
 
-    //   <Marker key={1} id={1} position={{
-    //     lat:  -6.4779144,
-    //     lng: -35.4370787
-    //   }}
-    //   ></Marker>
-    // ]
   }
 
   render() {
     const { localizacao } = this.state;
-    console.log(localizacao);
-    console.log("TESTE");
-    // if(localizacao[0]){
-    //   const {latitude} = (localizacao[0]);
-    //   console.log(localizacao[0].latitude);
-    // }
     
     return (
 
@@ -128,9 +92,7 @@ export class MapContainer extends Component {
 
         {this.displayMarkers()}
           <InfoWindow>
-            <div>
-              <h4> Teste2 </h4> 
-            </div>
+            
           </InfoWindow>
       </Map>
 

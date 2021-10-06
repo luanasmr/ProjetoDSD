@@ -14,5 +14,4 @@ export default {
         let result = await firebase.auth().signInWithPopup(provider);
         return result;
     }
-
 }

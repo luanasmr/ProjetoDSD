@@ -28,7 +28,7 @@ export default ({onReceiveGoogle}) => {
       <>
        <AreaMeio> 
        <div className="logo">
-                <img src="../../../logo.png"></img>
+                {/* <img src="../../../logo.png"></img> */}
         </div>
        </AreaMeio>
             <AreaLogin>
@@ -38,7 +38,7 @@ export default ({onReceiveGoogle}) => {
                     <BtnDefaultIcons onClick={actionLoginGoogle}>
                        <div >
                         <GTranslateIcon></GTranslateIcon>
-                        <Button color="#fff" class="center">Fazer login com o Google</Button>
+                        <Button color="#fff" class="center">Conta do Google</Button>
                         </div>
                     </BtnDefaultIcons>
             </AreaLogin>

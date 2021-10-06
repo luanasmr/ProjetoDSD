@@ -33,5 +33,3 @@ export const AreaLogin = styled.div`
     }
 
 `;
-
-

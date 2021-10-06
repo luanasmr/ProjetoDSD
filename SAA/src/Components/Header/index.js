@@ -15,7 +15,7 @@ function Header(){
                 <ul>
                     <li><Link to="/">Início</Link></li>
                     <li><Link to="config">Histórico</Link></li>
-                    <li><Link to="logout">Sair</Link></li>
+                    <li><Link to="../../../">Sair</Link></li>
                 </ul>
             </nav>
         </div>
@@ -23,5 +23,4 @@ function Header(){
      </AreaHeader>
       );
   }
-  
   export default Header;

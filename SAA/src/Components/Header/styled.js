@@ -8,7 +8,7 @@ export const AreaHeader = styled.div`
     color:#fff;
 
     .container{
-        padding: 5px 20px;
+        padding: 10px 80px;
         display: flex;
         align-itens: center;
 
@@ -30,18 +30,21 @@ export const AreaHeader = styled.div`
 
         ul{
             display: flex;
+            
         }
 
         li{
             list-style: none;
             margin-left: 20px;
+            margin-top:9px;
 
             a{
                 text-decoration:none;
                 color: #fff;
 
                 &:hover{
-                    color: #F5BB00;
+                    color: #fff;
+                    font-weight: 900;
                 }
             }
         }
